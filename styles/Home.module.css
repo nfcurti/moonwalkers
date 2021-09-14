@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Marcellus&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&display=swap');
 
 .swiper {
   width: 240px;
@@ -61,7 +63,8 @@
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background:url('/assets/background.svg');
+  background: linear-gradient( rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6) ), url('/Rectangle.png');
+  background-size: 100% 100%;
   position: relative;
 }
 .about_container {
@@ -72,8 +75,7 @@
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background:url('/assets/aboutbg.svg');
-  background-size: contain;
+  background:linear-gradient( rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6) ),url('/Rectangle.png');
   position: relative;
 }
 .traits_container {
@@ -95,7 +97,8 @@
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background:black;
+  background:linear-gradient( rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6) ),url('/Roadmaps2 1.png');
+  background-size: 100% 95%;
   position: relative;
 }
 .explore_container {
@@ -273,7 +276,9 @@ transform: translate(-50%,-50%);}
 .bottom_menu{
   width: fit-content;
   margin: auto;
-  margin-top: 5px
+  margin-top: 5px;
+  list-style: none;
+  display: flex
 }
 
 .bottom_menu li{
@@ -413,6 +418,8 @@ letter-spacing: 0.15em;
   position: absolute;
   right: 5%;
   top:0px;
+  list-style: none;
+  display: flex
 }
 
 .social_menu li{
@@ -572,6 +579,10 @@ color: #333333
   transition:all 0.3s ease;
 }
 
+.wallet_item img{
+  width: 50%
+}
+
 .wallet_item:first-of-type{
   margin-top: 5em
 }
@@ -606,6 +617,41 @@ color: #333333
   font-weight: 500
 }
 
+.logoimg{
+      width: 30em;
+    height: inherit;
+    margin: auto;
+        position: absolute;
+    right: 0;
+    left: 0;
+    top: 3em;
+}
+
+.logoimg img{
+  width: 100%;
+  position: relative;
+  top:0;
+  right: 0
+}
+
+.comingsoon{
+  color: white;
+  border: 1px solid white;
+  border-radius: 2em;
+  padding: 0 3rem;
+  bottom: 7em;
+  position: absolute;
+  letter-spacing: 3px;
+  transition: all 0.5s ease;
+  font-family: Marcellus
+}
+
+.comingsoon:hover{
+  cursor: default;
+  background: white;
+  color: black
+}
+
 
 @media (max-width: 600px) {
   .grid {
@@ -618,6 +664,7 @@ color: #333333
   }
 
   .bottom_menu{
+    list-style: none !important;
     display: flex;
     width:auto;
   }
