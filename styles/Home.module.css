@@ -63,7 +63,7 @@
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background: linear-gradient( rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6) ), url('/Rectangle.png');
+  background: linear-gradient( rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4) ), url('/Rectangle.png');
   background-size: 100% 100%;
   position: relative;
 }
@@ -289,6 +289,10 @@ transform: translate(-50%,-50%);}
 cursor:pointer;
 }
 
+.bottom_menu_img{
+  display: none
+}
+
 .bottom_menu_img:nth-of-type(1){
 
   position: relative;
@@ -306,6 +310,8 @@ margin-right: 10px
   color: white;
   font-family: Source Sans Pro;
   padding:0.5em 3em;
+  font-weight: 800;
+  letter-spacing: 2px
 }
 
 .top_bar button:hover{

@@ -50,7 +50,7 @@ export default function Home() {
             <Fade>
         <div className={styles.home_container}>
           <div className={styles.top_bar}>
-            <div className={styles.mint_total}>
+            <div hidden className={styles.mint_total}>
               <h1>5000<span>AVAILABLE</span></h1>
             </div>
             <Fade delay={1000} className={styles.logoimg}>
@@ -71,7 +71,7 @@ export default function Home() {
         <Fade>
           <div className={styles.about_container}>
             <div className={styles.top_bar}>
-              <div className={styles.mint_total}>
+              <div hidden className={styles.mint_total}>
                 <h1>5000<span>AVAILABLE</span></h1>
               </div>
               <h1 className={styles.nav_title}>ABOUT</h1>
@@ -80,14 +80,15 @@ export default function Home() {
               :<img className={styles.wallet_connected} src='/assets/Wallet Connected.svg'/>}
             </div>
             <div className={styles.about_wrapper}>
-              <h1>GENERATIVE NFT PROJECT THAT BENEFITS MUSICIANS </h1>
-              <p>Moonwalkers is a colletion of 5,000 fur-covered alien species from a distant galaxy. By nature they were an angry & unpleasant species. Always discontent & unsatisfied with their way of living… one day, a Millenia ago, an ancient tape was discovered. this tape contained a series of audio files which brought peace & serenity to the Moonwalkers. they called this music. Lo-Fi. This inspired them to work together to explore the universe to discover new music, to keep their world safe & to never return to the days of old...</p>
+              <h1>What is MoonwalkerFM </h1>
+              <p>Lo-Fi Moonwalkers is the first NFT collection from MoonwalkerFM connecting Artists & Investors in a way never seen before. For the first time fans can be a part of the success of a song that they love in real time. But what are Moonwalkers? By nature they were an angry & unpleasant species. fur-covered aliens from a distant galaxy. Always discontent & unsatisfied with their way of living… one day, a Millenia ago, an ancient tape was discovered. this tape contained a series of audio files which brought peace & serenity to the Moonwalkers. they called this music. Lo-Fi. This inspired them to work together to explore the universe to discover new music, to keep their world safe & to never return to the days of old...</p>
               <div className={styles.horizontal_line}></div>
               <div className={styles.bottom_about}>
                 <img src='/demo5.jpg'/>
                 <div className={styles.about_price}>
-                  <h3>MW PRICE: 0.05Ξ</h3>
-                  <p>Every NFT minted gets paired with a full-length Lo-Fi song from streaming platforms. Owner will get 45% off that song's royalties.</p>
+                  <h3>MW PRICE: 0.06Ξ</h3>
+                  <p>Every NFT minted gets paired with a full-length Lo-Fi song from streaming platforms, as the seasons roll out.
+The NFT holders of these songs can take home up to 45% streaming royalties.</p>
                 </div>
               </div>
             </div>
@@ -99,7 +100,7 @@ export default function Home() {
         <Fade>
           <div className={styles.traits_container}>
             <div className={styles.top_bar}>
-              <div className={styles.mint_total}>
+              <div hidden className={styles.mint_total}>
                 <h1>5000<span>AVAILABLE</span></h1>
               </div>
               <h1 className={styles.nav_title}>TRAITS</h1>
@@ -141,7 +142,7 @@ export default function Home() {
       {tab==4 ?
         <Fade>
           <div className={styles.explore_container}>
-            {tab!='4' ? <div className={styles.mint_total}>
+            {tab!='4' ? <div hidden className={styles.mint_total}>
                           <h1>5000<span>AVAILABLE</span></h1>
                         </div> :
                         <img onClick={() => {setTab(0);setBlur(false)}} className={styles.close_button} src='/assets/Close Icon.svg'/>}
