@@ -97,7 +97,7 @@
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background:linear-gradient( rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6) ),url('/Roadmaps2 1.png');
+  background:url('/Roadmaps_1.png');
   background-size: 100% 95%;
   position: relative;
 }
@@ -446,7 +446,9 @@ left:50%;
 top:50%;
   color:white;
 transform: translate(-50%,-50%);
-width: 40%;}
+width: 40%;
+height: 70%;
+overflow: scroll}
 
 .about_wrapper h1{
   font-family: Marcellus;
@@ -658,6 +660,11 @@ color: #333333
   color: black
 }
 
+.utilitypng{
+    width: 100%;
+    margin-top: 2em;
+}
+
 
 @media (max-width: 600px) {
   .grid {
@@ -679,9 +686,10 @@ color: #333333
     position: fixed;
   }
 
-  .bottom_menu a{
-    font-size: 0;
+  .bottom_about{
+    display:block;
   }
+
 
   .top_bar button{
     position: initial;
@@ -689,10 +697,17 @@ color: #333333
     width: auto;
     margin: auto;
     display: block;
+        margin-top: 8em;
   }
 
   .mint_total{
     width: fit-content;
+  }
+
+  .home_container{
+        background-size: cover;
+    position: relative;
+    background-position: center;
   }
 
   .about_wrapper{
@@ -700,8 +715,13 @@ color: #333333
     text-align:center;
     overflow: scroll;
     height: 70%;
-    height: 70%;
     margin-top: 4em;
+  }
+
+  .roadmap_container{
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center 25%
   }
 
   .explore_single{
@@ -714,6 +734,10 @@ color: #333333
 
   .connect_hero span{
     width: 77%
+  }
+
+  .logoimg{
+        width: 15em;
   }
 }
 

@@ -18,7 +18,7 @@ import SwiperCore, {
   SwiperCore.use([EffectCards]);
 
 export default function Home() {
-  const [menu, setMenu] = useState(false)
+  const [menu, setMenu] = useState(true)
   const [blur, setBlur] = useState(false)
   const [tab, setTab] = useState(0)
   const [rightOpen, setRightOpen] = useState(false)
@@ -91,6 +91,7 @@ export default function Home() {
 The NFT holders of these songs can take home up to 45% streaming royalties.</p>
                 </div>
               </div>
+              <img className={styles.utilitypng} src='utility.png'/>
             </div>
           </div>
         </Fade>
@@ -212,7 +213,7 @@ The NFT holders of these songs can take home up to 45% streaming royalties.</p>
                 <li onClick={() => setTab(0)}><a><img className={styles.bottom_menu_img} src='/assets/Traits Icon.svg'/>HOME</a></li>
                 <li onClick={() => setTab(1)}><a><img className={styles.bottom_menu_img} src='/assets/About Icon.svg'/>ABOUT</a></li>
                 <li onClick={() => setTab(3)}><a><img className={styles.bottom_menu_img} src='/assets/Roadmap Icon.svg'/>ROADMAP</a></li>
-                <li onClick={() => setTab(4)}><a><img className={styles.bottom_menu_img} src='/assets/Search Icon.svg'/>EXPLORE</a></li>
+                <li hidden onClick={() => setTab(4)}><a><img className={styles.bottom_menu_img} src='/assets/Search Icon.svg'/>EXPLORE</a></li>
               </ul>
               <ul className={styles.social_menu}>
               <li><a><img className={styles.bottom_menu_img} src='/assets/Twitter Icon.svg'/></a></li>
