@@ -97,9 +97,8 @@
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background:url('/Roadmaps_1.png');
-  background-size: 110% 95%;
-  background-position: center top;
+  background:url('/abbg.svg');
+  background-size: 203% 150%;
   position: relative;
 }
 .explore_container {
@@ -454,7 +453,7 @@ left:50%;
 top:50%;
   color:white;
 transform: translate(-50%,-50%);
-width: 40%;
+width: 50%;
 height: 70%;
 overflow: scroll}
 
