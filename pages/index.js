@@ -10,7 +10,7 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
-
+import ReactTooltip from 'react-tooltip';
 import "swiper/css/effect-cards"
 import SwiperCore, {
     EffectCards
@@ -136,6 +136,44 @@ The NFT holders of these songs can take home up to 45% streaming royalties.</p>
               <button onClick={toggleSidebar}>CONNECT WALLET</button>
               :<img className={styles.wallet_connected} src='/assets/Wallet Connected.svg'/>}
             </div>
+          <img data-tip data-for='sadFace' className={styles.planety} src='planeuta__x2B__Layer_7_xA0_Image.png'/>
+          <ReactTooltip id='sadFace' type='dark' effect='solid'>
+            <span>0% minted</span>
+            <p>- Mint 100 NFTs for team, giveaways & prize pools!</p>
+          </ReactTooltip>
+          <img data-tip data-for='2' className={styles.planety} src='planeuta__x2B__Layer_7_xA0_Image (1).png'/>
+          <ReactTooltip id='2' type='dark' effect='solid'>
+            <span>20% minted</span>
+            <p>- Pay team & contributors<br/>
+              - Moonwalker Ethereum Competition<br/>
+              - Season Zero Preview<br/></p>
+          </ReactTooltip>
+          <img data-tip data-for='3' className={styles.planety} src='planeuta__x2B__Layer_7_xA0_Image (2).png'/>
+          <ReactTooltip id='3' type='dark' effect='solid'>
+            <span>40% minted</span>
+            <p>- Support Act Donation (5%)</p>
+          </ReactTooltip>
+          <img data-tip data-for='4' className={styles.planety} src='planeuta__x2B__Layer_7_xA0_Image (3).png'/>
+          <ReactTooltip id='4' type='dark' effect='solid'>
+            <span>60% minted</span>
+            <p>- Artist Discovery Project Announced (For Season One)<br/>
+            - Season Zero date announced</p>
+          </ReactTooltip>
+          <img data-tip data-for='5' className={styles.planety} src='planeuta__x2B__Layer_7_xA0_Image (4).png'/>
+          <ReactTooltip id='5' type='dark' effect='solid'>
+            <span>80% minted</span>
+            <p>- MoonwalkerFM Merch Announcement/Drop date<br/>
+              - MWFM 24/7 YT Channel launch</p>
+          </ReactTooltip>
+          <img data-tip data-for='6' className={styles.planety} src='planeuta__x2B__Layer_7_xA0_Image (5).png'/>
+          <ReactTooltip id='6' type='dark' effect='solid'>
+            <span>100% minted</span>
+            <p>- Live Discord Q&A with team<br/>
+- Moonwalker Ethereum Competition<br/>
+- 20% Net revenue put aside for Season Zero Marketing<br/>
+- Support Act Donation (5%)<br/>
+- Rarity Sniper Listing</p>
+          </ReactTooltip>
           </div>
         </Fade>
       :''}

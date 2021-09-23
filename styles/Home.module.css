@@ -1,6 +1,37 @@
 @import url('https://fonts.googleapis.com/css2?family=Marcellus&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&display=swap');
 
+.planety:nth-of-type(1){
+  position: absolute;
+  top:0;
+  left:-7%;
+}
+.planety:nth-of-type(2){
+  position: absolute;
+  bottom:8%;
+  left:-7%;
+}
+.planety:nth-of-type(3){
+  position: absolute;
+  top:0;
+  left:25%;
+}
+.planety:nth-of-type(4){
+  position: absolute;
+  bottom:7%;
+  left:40%;
+}
+.planety:nth-of-type(5){
+  position: absolute;
+  top:8%;
+  right: 25%
+}
+.planety:nth-of-type(6){
+  position: absolute;
+  bottom:9%;
+  right:-5%;
+}
+
 .swiper {
   width: 240px;
   height: 320px;
@@ -98,7 +129,7 @@
   align-items: center;
   height: 100vh;
   background:url('/abbg.svg');
-  background-size: 203% 150%;
+  background-size: cover;
   position: relative;
 }
 .explore_container {
