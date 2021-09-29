@@ -35,7 +35,7 @@ export default function Home() {
   const renderer = ({ days, hours, minutes, seconds, completed }) => {
     if (completed) {
       // Render a completed state
-      return <Completionist />;
+      return <p>We're live!</p>;
     } else {
       // Render a countdown
       return <p className={styles.cd}>Time to launch: {days} days {hours} hs {minutes} min {seconds} sec</p>;
