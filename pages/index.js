@@ -92,7 +92,7 @@ export default function Home() {
         <div className={styles.main_mint}>
           <h1>MINT YOUR OWN</h1>
           <p className={styles.main_mint_p}>There will be 10,000 MoonwalkerFM available to the public, each mint costing 0.06Ξ</p>
-          <div class="number">
+          <div >
         <p className={styles.main_mint_s} onClick={() => { 
           setMintAmount(mintAmount == 10 ? 10 : mintAmount+1) ;
 
