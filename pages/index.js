@@ -3,7 +3,6 @@ import Image from 'next/image'
 import styles from '../styles/Home.module.scss'
 import React, {useRef,  useState, useEffect } from 'react';
 import { Fade } from "react-awesome-reveal";
-import Header from './header.js'
 import { Navigation, Pagination, Scrollbar, A11y } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
@@ -63,7 +62,18 @@ export default function Home() {
 
 
   return (<div className={styles.page}>
-        <Header/>
+        
+      <Head>
+        <title>MoonwalkerFM</title>
+        <meta name="description" content="CCG - 10,000 Cute Cats coming from the metaverse!" />
+        <link rel="icon" href="/demo4.jpg" />
+      </Head>
+      <nav className={styles.navbar}>
+        <Fade delay={600}>
+          <img src='/222 (1).svg'/>
+        </Fade>
+        <button className={styles.connect_button}>CONNECT</button>
+      </nav>
         <div className={styles.csoon}>COMING SOON</div>
         <img className={styles.himg} src='/Rectangle.png'/>
             <Countdown date={1635539764000} renderer={renderer}/>
