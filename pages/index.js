@@ -66,8 +66,8 @@ export default function Home() {
         <Header/>
         <div className={styles.csoon}>COMING SOON</div>
         <img className={styles.himg} src='/Rectangle.png'/>
-        <div className={styles.main}>
             <Countdown date={1635539764000} renderer={renderer}/>
+        <div className={styles.main}>
           <div className={styles.main_wrapper}>
             <h1>What is MoonwalkerFM</h1>
             <p>Lo-Fi Moonwalkers is the first NFT collection from MoonwalkerFM connecting Artists & Investors in a way never seen before. <br/>For the first time fans can be a part of the success of a song that they love in real time. </p>
