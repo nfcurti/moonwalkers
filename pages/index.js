@@ -65,7 +65,7 @@ export default function Home() {
         
       <Head>
         <title>MoonwalkerFM</title>
-        <meta name="description" content="CCG - 10,000 Cute Cats coming from the metaverse!" />
+        <meta name="description" content="MFM - 5,000 music adict Moonwalkers!!" />
         <link rel="icon" href="/demo4.jpg" />
       </Head>
       <nav className={styles.navbar}>
@@ -82,7 +82,7 @@ export default function Home() {
             <h1>What is MoonwalkerFM</h1>
             <p>Lo-Fi Moonwalkers is the first NFT collection from MoonwalkerFM connecting Artists & Investors in a way never seen before. <br/>For the first time fans can be a part of the success of a song that they love in real time. </p>
             <br/>
-            <p>Every NFT minted gets paired with a full-length Lo-Fi song from streaming platforms, as the seasons roll out. The NFT holders of these songs can take home up to 45% streaming royalties.</p>
+            <p>Every NFT minted gets paired with a full-length Lo-Fi song from streaming platforms, as the seasons roll out. The NFT holders of these songs can take home up to 45 <span style={{fontFamily:'Inter'}}>%</span> streaming royalties.</p>
           </div>
           <img src={`/demo${heroIndex}.jpg`}/>
         </div>
@@ -92,16 +92,16 @@ export default function Home() {
         </div>
         
         <div className={styles.main_gallery}>
-          <img src={`/demo${1}.jpg`}/>
-          <img src={`/demo${2}.jpg`}/>
-          <img src={`/demo${3}.jpg`}/>
-          <img src={`/demo${4}.jpg`}/>
-          <img src={`/demo${5}.jpg`}/>
-          <img src={`/demo${6}.jpg`}/>
+          <img src={`/s${1}.png`}/>
+          <img src={`/s${2}.png`}/>
+          <img src={`/s${3}.png`}/>
+          <img src={`/s${4}.png`}/>
+          <img src={`/s${5}.png`}/>
+          <img src={`/s${6}.png`}/>
         </div>
         <div className={styles.main_mint}>
           <h1>MINT YOUR OWN</h1>
-          <p className={styles.main_mint_p}>There will be 10,000 MoonwalkerFM available to the public, each mint costing 0.06Ξ</p>
+          <p className={styles.main_mint_p}>There will be 5,000 MoonwalkerFM available to the public, each mint costing 0.06Ξ</p>
           <div >
         <p className={styles.main_mint_s} onClick={() => { 
           setMintAmount(mintAmount == 10 ? 10 : mintAmount+1) ;
@@ -118,7 +118,6 @@ export default function Home() {
 
         <div className={styles.roadmap}>
           <h1 className={styles.roadmap_header}>Roadmap</h1>
-          <img className={styles.roadmap_img} src='Roadmaps2 1.png'/>
           <div className={styles.roadmap_wrapper}>
             <div className={styles.roadmap_wrapper_item}>
               <h1>0 <img src='/percentage.svg' width={20 } /> </h1>
@@ -132,7 +131,7 @@ export default function Home() {
             </div>
             <div className={styles.roadmap_wrapper_item}>
               <h1>40<img src='/percentage.svg' width={20 } /></h1>
-              <p>Support Act Donation (5%)</p>
+              <p>Support Act Donation (5 <span style={{fontFamily:'Inter'}}>%</span>)</p>
             </div>
             <div className={styles.roadmap_wrapper_item}>
               <h1>60<img src='/percentage.svg' width={20 } /></h1>
@@ -141,12 +140,16 @@ export default function Home() {
             </div>
             <div className={styles.roadmap_wrapper_item}>
               <h1>80<img src='/percentage.svg' width={20 } /></h1>
-              <p>MoonwalkerFM Merch Announcement/Drop date</p><br/>
-              <p>MWFM 24/7 YT Channel launch</p>
+              <p>MoonwalkerFM Merch Announcement <span style={{fontFamily:'Inter'}}>/</span> Drop date</p><br/>
+              <p>MWFM 24 <span style={{fontFamily:'Inter'}}>/</span> 7 YT Channel launch</p>
             </div>
             <div className={styles.roadmap_wrapper_item}>
               <h1>100<img src='/percentage.svg' width={20 } /></h1>
-              <p> 3 NFT's Airdropped to 3 holders</p>
+              <p>Live Discord Q&A with team</p><br/>
+              <p>Moonwalker Ethereum Competition</p><br/>
+              <p>20 <span style={{fontFamily:'Inter'}}>%</span> Net revenue put aside for Season Zero Marketing</p><br/>
+              <p>Support Act Donation (5 <span style={{fontFamily:'Inter'}}>%</span>)</p><br/>
+              <p>Rarity Sniper Listing</p>
             </div>
           </div>
         </div>
