@@ -194,7 +194,7 @@ export default function Home() {
               <p>Founder & Project Lead</p>
             </div>
             <div className={styles.team_item}>
-              <img src='/demo2.jpg'/>
+              <img src='/demo8.jpg'/>
               <h3>@SkuseTheMoonwalker</h3>
               <p>Co-Founder & Marketing</p>
             </div>
