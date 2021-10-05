@@ -152,6 +152,83 @@ export default function Home() {
               <p>Rarity Sniper Listing</p>
             </div>
           </div>
+          <br/>
+          <h1 style={{margin:'0'}} className={styles.roadmap_header}>Post-launch</h1>
+          <div className={styles.roadmap_wrapper}>
+            <div className={styles.roadmap_wrapper_item}>
+              <h1>Q4 2021</h1>
+              <p>Season Zero Release</p><br/>
+              <p>A Christmas Treasure Hunt</p><br/>
+              <p>Spaceships</p><br/>
+              <p>Large marketing push</p><br/>
+            </div>
+            <div className={styles.roadmap_wrapper_item}>
+              <h1>Q1 2022</h1>
+              <p>Season One Announcement & Release</p><br/>
+              <p>Big Merch Drop</p>
+            </div>
+            <div className={styles.roadmap_wrapper_item}>
+              <h1>Q2 2022</h1>
+              <p>Season Three & Four Announcement & Release</p><br/>
+              <p>MoonwalkerFM Online Music Festival</p>
+            </div>
+            <div className={styles.roadmap_wrapper_item}>
+              <h1>Q3 2022</h1>
+              <p>Season Five & Six Announcement & Release</p><br/>
+              
+            </div>
+            <div className={styles.roadmap_wrapper_item}>
+              <h1>Q4 2022</h1>
+              <p>Moonwalker Fight Club (Game) Announcement</p><br/>
+              <p>Season Seven & Eight Announcement & Release</p><br/>
+            </div>
+          </div>
+
+        </div>
+        <div className={styles.team}>
+          <h1>Team</h1>
+          <div className={styles.team_wrapper}>
+            <div className={styles.team_item}>
+              <img src='/Leonardo.jpg'/>
+              <h3>@CameronTheMoonwalker</h3>
+              <p>Founder & Project Lead</p>
+            </div>
+            <div className={styles.team_item}>
+              <img src='/Variation 6.jpg'/>
+              <h3>@SkuseTheMoonwalker</h3>
+              <p>Co-Founder & Marketing</p>
+            </div>
+            <div className={styles.team_item}>
+              <img src='/Variation 8.jpg'/>
+              <h3>@JelmerTheMoonwalker</h3>
+              <p>Music Promotion & Playlist Lead</p>
+            </div>
+            <div className={styles.team_item}>
+              <img src='/Variation 9.jpg'/>
+              <h3>@NicoC</h3>
+              <p>Tech Lead</p>
+            </div>
+            <div className={styles.team_item}>
+              <img src='/Variation 10.jpg'/>
+              <h3>@vondoom</h3>
+              <p>Marketing</p>
+            </div>
+            <div className={styles.team_item}>
+              <img src='/Screen Shot 2021-09-24 at 8.00.41 pm.png'/>
+              <h3>@OLLA</h3>
+              <p>Marketing & Community Management</p>
+            </div>
+            <div className={styles.team_item}>
+              <img src='/Screen Shot 2021-09-22 at 9.40.16 pm.png'/>
+              <h3>@laura.the.artist</h3>
+              <p>Artist</p>
+            </div>
+            <div className={styles.team_item}>
+              <img src='/demo8.jpg'/>
+              <h3>@Tiarna</h3>
+              <p>Copywriter</p>
+            </div>
+          </div>
         </div>
     </div>
   )

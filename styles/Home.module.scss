@@ -9,6 +9,24 @@
   src: url(/Mont-HeavyDEMO.otf);
 }
 
+.team{
+    padding-bottom:5em;
+    h3{
+    width: 82%;
+    margin: auto;
+    }
+}
+
+.team_wrapper{
+    display:flex;
+    flex-wrap:wrap;
+
+}
+
+.team_item{
+    flex:1 0 24%
+}
+
 .cd{
     color:white;
     background:black;
@@ -33,6 +51,26 @@
     background:black;
     color:white;
     text-align:center;
+    p{
+        width:70%;
+        margin:auto !important;
+        display:block;
+        font-family:Mont Light
+    }
+    b{
+        font-family:Mont Heavy
+    }
+    img{
+        margin:2em;
+        width:80%;
+        border:3px solid white
+    }
+}
+.team{
+    background:black;
+    color:white;
+    text-align:center;
+    padding-top:2em;
     p{
         width:70%;
         margin:auto !important;
