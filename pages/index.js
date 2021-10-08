@@ -101,7 +101,7 @@ export default function Home() {
         </div>
         <div className={styles.main_mint}>
           <h1>MINT YOUR OWN</h1>
-          <p className={styles.main_mint_p}>There will be 5,000 MoonwalkerFM available to the public, each mint costing 0.06Ξ</p>
+          <p className={styles.main_mint_p}>There will be 5,000 Lo-fi Moonwalkers available to the public, each mint costing 0.06Ξ</p>
           <div >
         <p className={styles.main_mint_s} onClick={() => { 
           setMintAmount(mintAmount == 10 ? 10 : mintAmount+1) ;
@@ -115,7 +115,7 @@ export default function Home() {
       </div>
       <button className={styles.mint_button}> Mint {mintAmount} Moonwalkers!</button>
         </div>
-
+        <img className={styles.benefit} src='/benefit.png'/>
         <div className={styles.roadmap}>
           <h1 className={styles.roadmap_header}>Roadmap</h1>
           <div className={styles.roadmap_wrapper}>
