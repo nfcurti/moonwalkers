@@ -115,7 +115,7 @@ export default function Home() {
       </div>
       <button className={styles.mint_button}> Mint {mintAmount} Moonwalkers!</button>
         </div>
-        <img className={styles.benefit} src='/benefit.png'/>
+        <img className={styles.benefit} src='/utility.svg'/>
         <div className={styles.roadmap}>
           <h1 className={styles.roadmap_header}>Roadmap</h1>
           <div className={styles.roadmap_wrapper}>
