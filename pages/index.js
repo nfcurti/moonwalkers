@@ -76,7 +76,7 @@ export default function Home() {
       </nav>
         <div className={styles.csoon}>COMING SOON</div>
         <img className={styles.himg} src='/Rectangle.png'/>
-            <Countdown date={1635539764000} renderer={renderer}/>
+            <Countdown date={1634601600000} renderer={renderer}/>
         <div className={styles.main}>
           <div className={styles.main_wrapper}>
             <h1>What is MoonwalkerFM</h1>
