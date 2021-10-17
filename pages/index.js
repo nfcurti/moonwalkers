@@ -16,6 +16,9 @@ import SwiperCore, {
   } from 'swiper';
   SwiperCore.use([EffectCards]);
 import Countdown from 'react-countdown';
+import ContractData from '../config/Contract.json';
+const Web3 = require('web3');
+import detectEthereumProvider from '@metamask/detect-provider'
 
 export default function Home() {
   const [menu, setMenu] = useState(true)
@@ -24,23 +27,159 @@ export default function Home() {
   const [rightOpen, setRightOpen] = useState(false)
   const [wallet, setWallet] = useState('')
   const n = 15;
-  const [userAddress, setUserAddress] = useState(0);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [darkMode, setDarkMode] = useState(false);
   const [heroIndex, setHeroIndex] = useState(1);
   const [mintAmount, setMintAmount] = useState(1)
 
+
+  //  const _chainIdToCompare = 1; //Ethereum
+   const _chainIdToCompare = 1; //Rinkeby
+  const [traits, setTraits] = useState(0)
+  const [userAddress, setUserAddress] = useState('CONNECT');
+  const [isLoading, setIsLoading] = useState(false);
+
+  const [mintForAllStartDate, setMintForAllStartDate] = useState(0);
+  const [remainingNFTs, setRemainingNFTs] = useState(0);
+
+  useEffect(async () => {
+    loadIndependentData();
+  }, []);
+
+  const loadIndependentData = async() => {
+    var currentProvider = new Web3.providers.HttpProvider(`https://${_chainIdToCompare == 1 ? 'mainnet' : 'rinkeby'}.infura.io/v3/be634454ce5d4bf5b7f279daf860a825`);
+    const web3 = new Web3(currentProvider);
+    const contract = new web3.eth.Contract(ContractData.abi, ContractData.address);
+
+
+      const mintForAllStartDateX = await contract.methods._mintForAllStartDate().call();
+     
+      setMintForAllStartDate(mintForAllStartDateX);
+
+      const maxSupply = await contract.methods.maxSupply().call();
+      const totalSupply = await contract.methods.totalSupply().call();
+      setRemainingNFTs(maxSupply - totalSupply);
+  }
   // Renderer callback with condition
   const renderer = ({ days, hours, minutes, seconds, completed }) => {
     if (completed) {
       // Render a completed state
-      return <p>We're live!</p>;
+      return <div><div >
+            <p className={styles.main_mint_s} onClick={() => { 
+              setMintAmount(mintAmount == 10 ? 10 : mintAmount+1) ;
+
+            }}>+</p>
+            <input type="text" value={`${mintAmount}`}/>
+            <p className={styles.main_mint_s} onClick={() => { 
+              setMintAmount(mintAmount == 0 ? 0 : mintAmount-1) ;
+
+            }}>-</p>
+          </div>
+          <button className={styles.mint_button} onClick={()=>mint(mintAmount)}> Mint {mintAmount} Moonwalkers!</button></div>;
     } else {
       // Render a countdown
       return <p className={styles.cd}>Time to launch: {days} days {hours} hs {minutes} min {seconds} sec</p>;
     }
   };
 
+    const requestAccountMetamask = async() => {
+      const accounts = await ethereum.request({ method: 'eth_requestAccounts' });
+      
+      if(accounts.length > 0) {
+        setUserAddress(accounts[0]);
+
+        const chainId = await ethereum.request({ method: 'eth_chainId' });
+        handleChainChanged(chainId);
+
+        ethereum.on('chainChanged', handleChainChanged);
+
+        function handleChainChanged(_chainId) {
+          if(_chainId != _chainIdToCompare) {
+            window.location.reload();
+          }
+        }
+
+        ethereum.on('accountsChanged', handleAccountsChanged);
+
+        async function handleAccountsChanged(accounts) {
+          if (accounts.length === 0) {
+            setUserAddress('');
+            
+            // loadDataAfterAccountDetected();
+          } else if (accounts[0] !== userAddress) {
+            const chainId = await ethereum.request({ method: 'eth_chainId' });
+            setUserAddress(chainId == _chainIdToCompare ? accounts[0] : 'CONNECT');
+            
+            
+          }
+        }
+      }
+    }
+
+  const connectMetamaskPressed = async () => {
+    try { 
+      await window.ethereum.enable();
+      requestAccountMetamask();
+   } catch(e) {
+      // User has denied account access to DApp...
+   }
+    try {
+      await ethereum.request({
+        method: 'wallet_switchEthereumChain',
+        params: [{ chainId: '0x'+_chainIdToCompare }],
+      });
+      requestAccountMetamask();
+    } catch (error) {
+      
+      // This error code indicates that the chain has not been added to MetaMask.
+      if (error.code === 4902) {
+        try {
+          await ethereum.request({
+            method: 'wallet_addEthereumChain',
+            params: [{ chainId: '0x'+_chainIdToCompare, rpcUrl: 'https://...' /* ... */ }],
+          });
+          requestAccountMetamask();
+        } catch (addError) {
+        }
+      }
+    }
+  }
+
+  const mint = async(mintValue) => {
+    if(userAddress == '') {
+      return alert('User is not connected');
+    }
+    
+    if(mintValue == 0) { return; }
+    setIsLoading(true);
+    const provider = await detectEthereumProvider()
+  
+    if (provider && userAddress!='') {
+      const web3 = new Web3(provider);
+      
+      const contract = new web3.eth.Contract(ContractData.abi, ContractData.address);
+
+      const _priceWei = await contract.methods.getCurrentPrice().call();
+      
+      var block = await web3.eth.getBlock("latest");
+      var gasLimit = block.gasLimit/block.transactions.length;
+      const gasPrice = await contract.methods.mint(
+        mintValue
+      ).estimateGas({from: userAddress, value: (mintValue*_priceWei)});
+
+      await contract.methods.mint(
+        mintValue
+      ).send({
+        from: userAddress,
+        value: (mintValue*_priceWei),
+        gas: gasPrice,
+        gasLimit: gasLimit
+      });
+      alert('Minted successfuly!');
+      setIsLoading(false);
+      window.location.reload();
+    }
+  }
 
   const sleep = async( ms) => {
     return new Promise(resolve => setTimeout(resolve, ms));
@@ -72,11 +211,12 @@ export default function Home() {
         <Fade delay={600}>
           <img src='/222 (1).svg'/>
         </Fade>
-        <button className={styles.connect_button}>CONNECT</button>
+        <button className={styles.connect_button} onClick={ () => {
+            connectMetamaskPressed();
+          }}>{userAddress=='CONNECT' ? 'Connect':`${userAddress.substring(0,3)}...${userAddress.substr(-3)}`}</button>
       </nav>
-        <div className={styles.csoon}>COMING SOON</div>
+        <div hidden className={styles.csoon}>COMING SOON</div>
         <img className={styles.himg} src='/Rectangle.png'/>
-            <Countdown date={1634601600000} renderer={renderer}/>
         <div className={styles.main}>
           <div className={styles.main_wrapper}>
             <h1>What is MoonwalkerFM</h1>
@@ -102,18 +242,9 @@ export default function Home() {
         <div className={styles.main_mint}>
           <h1>MINT YOUR OWN</h1>
           <p className={styles.main_mint_p}>There will be 5,000 Lo-fi Moonwalkers available to the public, each mint costing 0.06Ξ</p>
-          <div >
-        <p className={styles.main_mint_s} onClick={() => { 
-          setMintAmount(mintAmount == 10 ? 10 : mintAmount+1) ;
+          
+            <Countdown date={1634601600000} renderer={renderer}/>
 
-        }}>+</p>
-        <input type="text" value={`${mintAmount}`}/>
-        <p className={styles.main_mint_s} onClick={() => { 
-          setMintAmount(mintAmount == 0 ? 0 : mintAmount-1) ;
-
-        }}>-</p>
-      </div>
-      <button className={styles.mint_button}> Mint {mintAmount} Moonwalkers!</button>
         </div>
         <img className={styles.benefit} src='/utility.svg'/>
         <div className={styles.roadmap}>
