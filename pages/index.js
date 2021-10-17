@@ -222,13 +222,13 @@ export default function Home() {
             <h1>What is MoonwalkerFM</h1>
             <p>Lo-Fi Moonwalkers is the first NFT collection from MoonwalkerFM connecting Artists & Investors in a way never seen before. <br/>For the first time fans can be a part of the success of a song that they love in real time. </p>
             <br/>
-            <p>Every NFT minted gets paired with a full-length Lo-Fi song from streaming platforms, as the seasons roll out. The NFT holders of these songs can take home up to 45 <span style={{fontFamily:'Inter'}}>%</span> streaming royalties.</p>
+            <p>Every NFT minted gets paired with a full-length Lo-Fi song from streaming platforms, as the seasons roll out. The NFT holders of these songs can take home up to 45 <span style={{fontFamily:'Inter'}}>%</span> streaming royalties in the form of rewards.</p>
           </div>
           <img src={`/demo${heroIndex}.jpg`}/>
         </div>
         <div className={styles.about}>
           <p><b>But what are Moonwalkers?</b> <br/><br/>By nature they were an angry & unpleasant species. Fur-covered aliens from a distant galaxy. Always discontent & unsatisfied with their way of living… one day, a Millenia ago, an ancient tape was discovered. This tape contained a series of audio files which brought peace & serenity to the Moonwalkers. they called this music. Lo-Fi. This inspired them to work together to explore the universe to discover new music, to keep their world safe & to never return to the days of old...</p>
-          <img src='/utility.png'/>
+          <img src='/uti.svg'/>
         </div>
         
         <div className={styles.main_gallery}>
@@ -246,7 +246,7 @@ export default function Home() {
             <Countdown date={1634601600000} renderer={renderer}/>
 
         </div>
-        <img className={styles.benefit} src='/utility.svg'/>
+        <img className={styles.benefit} src='/benefits.svg'/>
         <div className={styles.roadmap}>
           <h1 className={styles.roadmap_header}>Roadmap</h1>
           <div className={styles.roadmap_wrapper}>
