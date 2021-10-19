@@ -70,7 +70,7 @@ export default function Home() {
 
             }}>-</p>
           </div>
-          <button hidden className={styles.mint_button} onClick={()=>mint(mintAmount)}> Mint {mintAmount} Moonwalkers!</button></div>;
+          <button  className={styles.mint_button} onClick={()=>mint(mintAmount)}> Mint {mintAmount} Moonwalkers!</button></div>;
     } else {
       // Render a countdown
       return <p className={styles.cd}>Time to launch: {days} days {hours} hs {minutes} min {seconds} sec</p>;
@@ -241,7 +241,7 @@ export default function Home() {
           <h1>MINT YOUR OWN</h1>
           <p className={styles.main_mint_p}>There will be 5,000 Lo-fi Moonwalkers available to the public, each mint costing 0.06Ξ</p>
           
-            <Countdown date={1634644863000} renderer={renderer}/>
+            <Countdown date={1634645247000} renderer={renderer}/>
 
         </div>
         <img className={styles.benefit} src='/benefits.svg'/>
