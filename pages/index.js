@@ -71,7 +71,7 @@ export default function Home() {
 
             }}>-</p>
           </div>
-          <button  className={styles.mint_button} onClick={()=>mint(mintAmount)}> Mint {mintAmount} Moonwalkers!</button></div>;
+          <button hidden className={styles.mint_button} onClick={()=>mint(mintAmount)}> Mint {mintAmount} Moonwalkers!</button></div>;
     } else {
       // Render a countdown
       return <p className={styles.cd}>Time to launch: {days} days {hours} hs {minutes} min {seconds} sec</p>;
