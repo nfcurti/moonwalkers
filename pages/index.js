@@ -52,10 +52,6 @@ export default function Home() {
     const contract = new web3.eth.Contract(ContractData.abi, ContractData.address);
 
 
-      const mintForAllStartDateX = await contract.methods._mintForAllStartDate().call();
-     
-      setMintForAllStartDate(mintForAllStartDateX);
-
       const maxSupply = await contract.methods.maxSupply().call();
       const totalSupply = await contract.methods.totalSupply().call();
       setRemainingNFTs(maxSupply - totalSupply);
@@ -75,7 +71,7 @@ export default function Home() {
 
             }}>-</p>
           </div>
-          <button className={styles.mint_button} onClick={()=>mint(mintAmount)}> Mint {mintAmount} Moonwalkers!</button></div>;
+          <button  className={styles.mint_button} onClick={()=>mint(mintAmount)}> Mint {mintAmount} Moonwalkers!</button></div>;
     } else {
       // Render a countdown
       return <p className={styles.cd}>Time to launch: {days} days {hours} hs {minutes} min {seconds} sec</p>;
@@ -146,7 +142,7 @@ export default function Home() {
   }
 
   const mint = async(mintValue) => {
-    if(userAddress == '') {
+    if(userAddress == 'CONNECT') {
       return alert('User is not connected');
     }
     
@@ -154,9 +150,9 @@ export default function Home() {
     setIsLoading(true);
     const provider = await detectEthereumProvider()
   
-    if (provider && userAddress!='') {
+    if (provider && userAddress!='CONNECT') {
       const web3 = new Web3(provider);
-      
+      alert(userAddress)
       const contract = new web3.eth.Contract(ContractData.abi, ContractData.address);
 
       const _priceWei = await contract.methods.getCurrentPrice().call();
@@ -222,7 +218,7 @@ export default function Home() {
             <h1>What is MoonwalkerFM</h1>
             <p>Lo-Fi Moonwalkers is the first NFT collection from MoonwalkerFM connecting Artists & Investors in a way never seen before. <br/>For the first time fans can be a part of the success of a song that they love in real time. </p>
             <br/>
-            <p>Every NFT minted gets paired with a full-length Lo-Fi song from streaming platforms, as the seasons roll out. The NFT holders of these songs can take home up to 45 <span style={{fontFamily:'Inter'}}>%</span> streaming royalties in the form of rewards.</p>
+            <p>Every NFT minted gets paired with a full-length Lo-Fi song from streaming platforms, as the seasons roll out. The NFT holders of these songs can take home up to 45 <span style={{fontFamily:'Inter'}}>%</span> of the value of streaming profits in the form of rewards.</p>
           </div>
           <img src={`/demo${heroIndex}.jpg`}/>
         </div>
