@@ -152,7 +152,6 @@ export default function Home() {
   
     if (provider && userAddress!='CONNECT') {
       const web3 = new Web3(provider);
-      alert(userAddress)
       const contract = new web3.eth.Contract(ContractData.abi, ContractData.address);
 
       const _priceWei = await contract.methods.getCurrentPrice().call();
