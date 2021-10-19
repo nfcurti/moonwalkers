@@ -156,7 +156,8 @@ export default function Home() {
 
       const _priceWei = await contract.methods.getCurrentPrice().call();
       
-      var block = await web3.eth.getBlock("latest");
+      try{
+        var block = await web3.eth.getBlock("latest");
       var gasLimit = block.gasLimit/block.transactions.length;
       const gasPrice = await contract.methods.mint(
         mintValue
@@ -173,6 +174,9 @@ export default function Home() {
       alert('Minted successfuly!');
       setIsLoading(false);
       window.location.reload();
+    }catch(e){
+      alert('An error has happened, connect your wallet with enough funds')
+    }
     }
   }
 
