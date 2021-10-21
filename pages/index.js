@@ -59,7 +59,7 @@ export default function Home() {
   const renderer = ({ days, hours, minutes, seconds, completed }) => {
     if (completed) {
       // Render a completed state
-      return <div><div >
+      return <div hidden><div >
             <p className={styles.main_mint_s} onClick={() => { 
               setMintAmount(mintAmount == 10 ? 10 : mintAmount+1) ;
 
@@ -242,10 +242,11 @@ export default function Home() {
           <p className={styles.main_mint_p}>There will be 5,000 Lo-fi Moonwalkers available to the public, each mint costing 0.06Ξ</p>
           
             <Countdown date={1634645247000} renderer={renderer}/>
-
         </div>
         <img className={styles.benefit} src='/benefits.svg'/>
-        <div className={styles.roadmap}>
+        <img style={{}} className={styles.benefit} src='/Website_Layout_2.svg'/>
+        <img className={styles.benefit} src='/Website_Layout_3.svg'/>
+        <div hidden className={styles.roadmap}>
           <h1 className={styles.roadmap_header}>Roadmap</h1>
           <div className={styles.roadmap_wrapper}>
             <div className={styles.roadmap_wrapper_item}>
