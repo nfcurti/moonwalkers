@@ -226,7 +226,7 @@ export default function Home() {
         </div>
         <div className={styles.about}>
           <p><b>But what are Moonwalkers?</b> <br/><br/>By nature they were an angry & unpleasant species. Fur-covered aliens from a distant galaxy. Always discontent & unsatisfied with their way of living… one day, a Millenia ago, an ancient tape was discovered. This tape contained a series of audio files which brought peace & serenity to the Moonwalkers. they called this music. Lo-Fi. This inspired them to work together to explore the universe to discover new music, to keep their world safe & to never return to the days of old...</p>
-          <img src='/uti.svg'/>
+          <img src='/Utility Page (Remodified).svg'/>
         </div>
         
         <div className={styles.main_gallery}>
